@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TVHand — one remote for every TV</title>
+<meta name="description" content="Control any smart TV from your phone — even the ones other remote apps can't reach. Type and search in any language, mouse control and kids mode.">
+<style>
+  :root{--bg:#0e1420;--card:#16213a;--txt:#e9eef7;--mut:#9aa7bd;--acc:#4f8ef7;--acc2:#7fd1ff;--ok:#4ccb6a}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,Segoe UI,Roboto,"Noto Sans Arabic",sans-serif;line-height:1.55}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}.logo i{width:30px;height:30px;border-radius:9px;background:var(--acc);display:inline-block}
+  nav a{color:var(--mut);text-decoration:none;margin-left:18px}nav a:hover{color:var(--txt)}
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:60px 0 40px}
+  h1{font-size:46px;line-height:1.1;margin:0 0 16px}h1 span{color:var(--acc2)}
+  .lead{font-size:18px;color:var(--mut);margin:0 0 26px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:#fff;padding:14px 20px;border-radius:14px;text-decoration:none;font-weight:600}.btn.alt{background:var(--card)}
+  .phone{background:var(--card);border-radius:36px;padding:16px;box-shadow:0 30px 80px rgba(0,0,0,.5);aspect-ratio:9/18.5;display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto}
+  .phone .bar{height:10px;border-radius:6px;background:#27395f;width:60%}
+  .dpad{margin:auto;width:180px;height:180px;position:relative}.dpad b{position:absolute;width:56px;height:56px;border-radius:16px;background:#27395f}
+  .dpad .u{top:0;left:62px}.dpad .d{bottom:0;left:62px}.dpad .l{left:0;top:62px}.dpad .r{right:0;top:62px}.dpad .o{left:62px;top:62px;border-radius:50%;background:var(--acc)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0}
+  .card{background:var(--card);border-radius:18px;padding:22px}.card h3{margin:0 0 8px;font-size:17px}.card p{margin:0;color:var(--mut);font-size:14px}
+  .tag{display:inline-block;background:rgba(79,142,247,.15);color:var(--acc2);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;margin-bottom:10px}
+  h2{font-size:30px;margin:50px 0 10px}
+  .pricing{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 40px}.price{font-size:34px;font-weight:800}
+  ul{padding-left:18px;color:var(--mut)}
+  .brands{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 30px}.brands span{background:var(--card);padding:8px 14px;border-radius:12px;font-size:14px}
+  footer{color:var(--mut);font-size:13px;padding:30px 0 50px;border-top:1px solid #1f2e4d;margin-top:40px}footer a{color:var(--mut)}
+  .lang{margin-left:auto}
+  @media(max-width:820px){.hero{grid-template-columns:1fr}h1{font-size:36px}.grid{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo"><i></i> TVHand</div>
+  <nav><a href="#features">Features</a><a href="#tvs">TVs</a><a href="#pricing">Pricing</a><a href="tv/">TV helper</a><a href="privacy.html">Privacy</a></nav>
+</header>
+
+<section class="hero">
+  <div>
+    <span class="tag">Works where other remote apps don't</span>
+    <h1>One remote for <span>every</span> TV</h1>
+    <p class="lead">Control your smart TV from your phone — arrows, volume, apps, mouse and typing. Including the budget Android TVs that every other remote app gives up on.</p>
+    <div class="cta">
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.fares.tvhand" id="dl-android">Get it on Google Play</a>
+      <a class="btn alt" href="tv/">TV helper (budget Android TVs)</a>
+    </div>
+    <p style="color:var(--mut);font-size:13px;margin-top:14px">Free to use · try Pro free for a full day, no card</p>
+  </div>
+  <div class="phone"><div class="bar"></div><div class="dpad"><b class="u"></b><b class="l"></b><b class="o"></b><b class="r"></b><b class="d"></b></div><div class="bar" style="width:90%"></div><div class="bar" style="width:75%"></div></div>
+</section>
+
+<h2 id="features">Why TVHand</h2>
+<div class="grid">
+  <div class="card"><h3>📺 Reaches the “impossible” TVs</h3><p>Budget Android TVs with locked firmware that other remote apps can't find. If your remote app shows “no TV found”, this is the one.</p></div>
+  <div class="card"><h3>⌨️ Type &amp; search in any language</h3><p>Search YouTube in Arabic, Urdu, Hindi or English — even when the TV keyboard refuses it. Passwords from your phone keyboard.</p></div>
+  <div class="card"><h3>🖱️ Mouse for stubborn apps</h3><p>A pointer on the TV for apps that ignore arrow keys (IPTV players, web apps). Drag to move, tap to click.</p></div>
+  <div class="card"><h3>👨‍👩‍👧 Family controls</h3><p>Kids mode with an allow‑list of apps, daily screen‑time limits, and a PIN so only your phones can control the TV.</p></div>
+</div>
+
+<h2 id="tvs">Works with</h2>
+<div class="brands"><span>Android TV &amp; Google TV</span><span>Budget Android TVs</span><span>Samsung</span><span>LG</span><span>Roku / TCL Roku</span><span>Fire TV (soon)</span></div>
+
+<h2 id="helper">Budget Android TV?</h2>
+<div class="card"><p>Samsung, LG, Roku and Google TV work right away. Budget Android TVs (no Google TV) need the free <b>TV Remote Server</b> helper once:
+open the TV's browser or the <i>Downloader</i> app, go to <b>devahmedfares.github.io/tvhand/tv</b>, install, open it once.
+Step by step: <a href="tv/">TV helper page</a>.</p></div>
+
+<h2 id="pricing">Simple pricing</h2>
+<div class="pricing">
+  <div class="card"><div class="tag">Free</div><div class="price">$0</div><ul><li>Find your TV automatically</li><li>Arrows, OK, Back, Home, volume</li><li>Power, and switching between TVs</li><li>No ads</li></ul></div>
+  <div class="card"><div class="tag">Pro · 1‑day free trial</div><div class="price">$1.99<span style="font-size:14px;color:var(--mut)">/month</span></div><div style="color:var(--mut);margin-top:-6px">or $9.99/year</div><ul><li>Mouse, keyboard, app launcher</li><li>Family controls &amp; kids mode</li><li>No ads</li></ul></div>
+</div>
+
+<footer>
+  © TVHand · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms</a> · <a href="mailto:remotysupport@gmail.com">remotysupport@gmail.com</a>
+</footer>
+</div>
+</body>
+</html>
