@@ -1,83 +1,265 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TVHand — one remote for every TV</title>
-<meta name="description" content="Control any smart TV from your phone — even the ones other remote apps can't reach. Type and search in any language, mouse control and kids mode.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TVHand · موبايلك بقى الريموت</title>
+<meta name="description" content="TVHand turns your phone into a smart TV remote: arrows, volume, mouse, keyboard and YouTube search in any language. Every feature free for 3 days, no card.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#0e1420;--card:#16213a;--txt:#e9eef7;--mut:#9aa7bd;--acc:#4f8ef7;--acc2:#7fd1ff;--ok:#4ccb6a}
-  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,Segoe UI,Roboto,"Noto Sans Arabic",sans-serif;line-height:1.55}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-  header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}.logo i{width:30px;height:30px;border-radius:9px;background:var(--acc);display:inline-block}
-  nav a{color:var(--mut);text-decoration:none;margin-left:18px}nav a:hover{color:var(--txt)}
-  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:60px 0 40px}
-  h1{font-size:46px;line-height:1.1;margin:0 0 16px}h1 span{color:var(--acc2)}
-  .lead{font-size:18px;color:var(--mut);margin:0 0 26px}
-  .cta{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:#fff;padding:14px 20px;border-radius:14px;text-decoration:none;font-weight:600}.btn.alt{background:var(--card)}
-  .phone{background:var(--card);border-radius:36px;padding:16px;box-shadow:0 30px 80px rgba(0,0,0,.5);aspect-ratio:9/18.5;display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto}
-  .phone .bar{height:10px;border-radius:6px;background:#27395f;width:60%}
-  .dpad{margin:auto;width:180px;height:180px;position:relative}.dpad b{position:absolute;width:56px;height:56px;border-radius:16px;background:#27395f}
-  .dpad .u{top:0;left:62px}.dpad .d{bottom:0;left:62px}.dpad .l{left:0;top:62px}.dpad .r{right:0;top:62px}.dpad .o{left:62px;top:62px;border-radius:50%;background:var(--acc)}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0}
-  .card{background:var(--card);border-radius:18px;padding:22px}.card h3{margin:0 0 8px;font-size:17px}.card p{margin:0;color:var(--mut);font-size:14px}
-  .tag{display:inline-block;background:rgba(79,142,247,.15);color:var(--acc2);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;margin-bottom:10px}
-  h2{font-size:30px;margin:50px 0 10px}
-  .pricing{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 40px}.price{font-size:34px;font-weight:800}
-  ul{padding-left:18px;color:var(--mut)}
-  .brands{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 30px}.brands span{background:var(--card);padding:8px 14px;border-radius:12px;font-size:14px}
-  footer{color:var(--mut);font-size:13px;padding:30px 0 50px;border-top:1px solid #1f2e4d;margin-top:40px}footer a{color:var(--mut)}
-  .lang{margin-left:auto}
-  @media(max-width:820px){.hero{grid-template-columns:1fr}h1{font-size:36px}.grid{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}}
+  :root{--bg:#0b1220;--bg2:#101a2e;--card:#15213a;--line:#22304d;--txt:#eef3fb;--mut:#9fb0cc;--acc:#4f8ef7;--acc2:#7fd1ff;--ok:#3ccf74}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:Cairo,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;overflow-x:hidden}
+  a{color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:10;background:rgba(11,18,32,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;text-decoration:none}
+  .logo svg{width:34px;height:34px}
+  nav{display:flex;gap:22px;align-items:center}
+  nav a{color:var(--mut);text-decoration:none;font-size:15px}nav a:hover{color:var(--txt)}
+  .lang{border:1px solid var(--line);background:none;color:var(--txt);border-radius:10px;padding:6px 12px;font:inherit;font-size:14px;cursor:pointer}
+  @media(max-width:760px){nav a{display:none}}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#fff;text-decoration:none;font-weight:800;border-radius:14px;padding:14px 22px;font-size:17px;box-shadow:0 10px 30px rgba(79,142,247,.35)}
+  .btn.alt{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--txt);font-weight:600}
+  .btn svg{width:22px;height:22px}
+  .hero{position:relative;padding:70px 0 40px;background:radial-gradient(70% 60% at 70% 0%,rgba(43,111,224,.45),transparent 70%)}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+  .pill{display:inline-block;background:rgba(60,207,116,.12);color:var(--ok);border:1px solid rgba(60,207,116,.35);border-radius:999px;padding:5px 14px;font-size:14px;font-weight:600}
+  h1{font-size:clamp(38px,5.6vw,64px);line-height:1.15;margin:16px 0 14px;font-weight:800}
+  h1 span{background:linear-gradient(90deg,var(--acc2),var(--acc));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{font-size:19px;color:var(--mut);max-width:560px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 12px}
+  .small{font-size:14px;color:var(--mut)}
+  .phones{position:relative;height:560px}
+  .phone{position:absolute;width:250px;border-radius:34px;padding:8px;background:#05080f;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 2px #26324d}
+  .phone img{display:block;width:100%;border-radius:27px;aspect-ratio:1233/2673;background:#0b1220}
+  .phones .p1{inset-inline-end:40px;top:0;transform:rotate(-5deg);z-index:2}
+  .phones .p2{inset-inline-end:240px;top:70px;transform:rotate(6deg);opacity:.95}
+  @media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.phones{height:470px}.phone{width:210px}.phones .p1{inset-inline-end:calc(50% - 200px)}.phones .p2{inset-inline-end:calc(50% - 10px)}}
+  section{padding:70px 0}
+  h2{font-size:clamp(28px,3.6vw,42px);margin:0 0 10px;line-height:1.25}
+  .sub{color:var(--mut);font-size:18px;margin:0 0 34px;max-width:700px}
+  .center{text-align:center}.center .sub{margin-inline:auto}
+  .typing{background:linear-gradient(180deg,var(--bg2),var(--bg))}
+  .stage{display:grid;grid-template-columns:260px 1fr;gap:46px;align-items:center}
+  .stage .phone{position:relative;width:260px}
+  .typebox{position:absolute;top:21%;inset-inline:22px;background:#0f1729;border:2px solid var(--acc);border-radius:12px;padding:10px 12px;font-size:16px;min-height:46px}
+  .typebox .t,.tvsearch .t{white-space:pre}
+  .caret{display:inline-block;width:2px;height:20px;background:var(--acc2);vertical-align:middle;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .tv{position:relative;background:#04060b;border:10px solid #1b2236;border-radius:14px;aspect-ratio:16/9;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .tv:after{content:"";position:absolute;left:50%;bottom:-34px;transform:translateX(-50%);width:140px;height:20px;background:#1b2236;border-radius:0 0 8px 8px}
+  .yt{position:absolute;inset:0;padding:5%;background:#0f0f0f;border-radius:4px}
+  .ytbar{display:flex;align-items:center;gap:12px;margin-bottom:5%;direction:ltr}
+  .ytlogo{background:#ff0000;color:#fff;font-weight:800;border-radius:6px;padding:2px 10px;font-size:clamp(11px,1.4vw,16px)}
+  .tvsearch{flex:1;background:#222;border:1px solid #444;border-radius:999px;padding:6px 16px;color:#fff;font-size:clamp(12px,1.6vw,20px);min-height:1.9em}
+  .results{display:grid;grid-template-columns:repeat(3,1fr);gap:3%}
+  .res{aspect-ratio:16/10;border-radius:8px;background:#1a1a1a;opacity:.25;transform:translateY(8px);transition:.4s}
+  .res.on{opacity:1;transform:none}
+  .res:nth-child(1).on{background:linear-gradient(135deg,#1f6f4a,#0d3d29)}.res:nth-child(2).on{background:linear-gradient(135deg,#6b4a1f,#3d2a0d)}.res:nth-child(3).on{background:linear-gradient(135deg,#1f3f6f,#0d213d)}
+  .res:nth-child(4).on{background:linear-gradient(135deg,#5a1f6f,#300d3d)}.res:nth-child(5).on{background:linear-gradient(135deg,#6f1f2e,#3d0d16)}.res:nth-child(6).on{background:linear-gradient(135deg,#1f6f6b,#0d3d3a)}
+  .ticks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+  .tick{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .tick b{display:block;font-size:17px;margin-bottom:4px}.tick span{color:var(--mut);font-size:15px}
+  @media(max-width:860px){.stage{grid-template-columns:1fr;justify-items:center}.stage>div{width:100%}.ticks{grid-template-columns:1fr}}
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;margin:0 0 80px}
+  .feat:nth-child(odd) .shot{order:-1}
+  .feat .shot{display:flex;justify-content:center}
+  .feat .shot .phone{position:relative;width:250px}
+  .tag{display:inline-block;font-size:13px;font-weight:800;border-radius:8px;padding:3px 10px;margin-bottom:10px}
+  .tag.free{background:rgba(60,207,116,.14);color:var(--ok)}.tag.pro{background:rgba(79,142,247,.16);color:var(--acc2)}
+  .feat h3{font-size:30px;margin:0 0 10px}.feat p{color:var(--mut);font-size:17px;margin:0 0 14px}
+  .feat ul{margin:0;padding-inline-start:20px}.feat li{margin:6px 0}
+  @media(max-width:860px){.feat{grid-template-columns:1fr}.feat:nth-child(odd) .shot{order:0}}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+  .step i{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--acc);font-style:normal;font-weight:800;margin-bottom:10px}
+  .step b{display:block;font-size:19px}.step span{color:var(--mut)}
+  @media(max-width:760px){.steps{grid-template-columns:1fr}}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;position:relative}
+  .plan.best{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc),0 20px 60px rgba(79,142,247,.2)}
+  .plan .price{font-size:40px;font-weight:800;margin:6px 0;direction:ltr;text-align:start}.plan .price small{font-size:16px;color:var(--mut);font-weight:400}
+  .plan ul{padding-inline-start:20px;color:var(--mut)}.plan li{margin:6px 0}
+  .save{position:absolute;top:-12px;inset-inline-end:20px;background:var(--ok);color:#06210f;font-weight:800;border-radius:999px;padding:3px 12px;font-size:13px}
+  .trial{margin-top:22px;background:rgba(60,207,116,.1);border:1px solid rgba(60,207,116,.35);border-radius:16px;padding:16px 20px}
+  @media(max-width:860px){.plans{grid-template-columns:1fr}}
+  .helper{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .helper code{background:#0b1220;border:1px solid var(--line);border-radius:8px;padding:2px 8px;direction:ltr;display:inline-block}
+  details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:10px 0}
+  summary{cursor:pointer;font-weight:600;font-size:17px}details p{color:var(--mut);margin:10px 0 0}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  footer a{color:var(--mut)}
+  .reveal{opacity:0;transform:translateY(24px);transition:.7s}.reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.caret{animation:none}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-  <div class="logo"><i></i> TVHand</div>
-  <nav><a href="#features">Features</a><a href="#tvs">TVs</a><a href="#pricing">Pricing</a><a href="tv/">TV helper</a><a href="privacy.html">Privacy</a></nav>
-</header>
+<header><div class="wrap">
+  <a class="logo" href="#"><svg viewBox="0 0 108 108"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4F8EF7"/><stop offset="1" stop-color="#1A56C4"/></linearGradient></defs><rect width="108" height="108" rx="26" fill="url(#g)"/><rect x="36" y="22" width="36" height="64" rx="9" fill="#fff"/><circle cx="54" cy="36" r="6" fill="#1E6FD9"/><rect x="45" y="50" width="18" height="6" rx="3" fill="#1E6FD9"/><rect x="45" y="60" width="18" height="6" rx="3" fill="#1E6FD9"/><rect x="45" y="70" width="18" height="6" rx="3" fill="#1E6FD9"/></svg>TVHand</a>
+  <nav>
+    <a href="#typing" data-en="Typing">الكتابة والبحث</a>
+    <a href="#features" data-en="Features">المميزات</a>
+    <a href="#pricing" data-en="Pricing">الأسعار</a>
+    <a href="#faq" data-en="FAQ">أسئلة</a>
+    <button class="lang" id="lang" aria-label="Language">English</button>
+  </nav>
+</div></header>
 
-<section class="hero">
-  <div>
-    <span class="tag">Works where other remote apps don't</span>
-    <h1>One remote for <span>every</span> TV</h1>
-    <p class="lead">Control your smart TV from your phone — arrows, volume, apps, mouse and typing. And if your TV isn't found, there's another way to connect it.</p>
+<div class="hero"><div class="wrap">
+  <div class="reveal">
+    <span class="pill" data-en="Every feature free for 3 days · no card">كل المميزات 3 أيام ببلاش · من غير كارت</span>
+    <h1 data-en-html="Your phone is <span>the remote</span>">موبايلك بقى <span>الريموت</span></h1>
+    <p class="lead" data-en="Control your smart TV from anywhere at home: arrows, volume, a real mouse, and typing &amp; YouTube search in any language, even when the remote goes missing.">تحكّم في شاشتك السمارت من أي مكان في البيت: الأسهم والصوت، وماوس حقيقي، وكتابة وبحث في يوتيوب بأي لغة، حتى لو الريموت ضاع.</p>
     <div class="cta">
-      <a class="btn" href="https://play.google.com/store/apps/details?id=com.fares.tvhand" id="dl-android">Get it on Google Play</a>
-      <a class="btn alt" href="tv/">TV not found? Try another way</a>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.fares.tvhand"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.2 13.4 12l-9.8 9.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1zm11 11 2.6 2.6-11.5 6.5 8.9-9.1zm3.7-4.3 2.9 1.6c.8.5.8 1.6 0 2.1l-2.9 1.6-2.9-2.9 2.9-2.4zM5.7 1.7l11.5 6.5-2.6 2.6-8.9-9.1z"/></svg><span data-en="Get it on Google Play">حمّله من Google Play</span></a>
+      <a class="btn alt" href="#typing" data-en="See it type ↓">شوف الكتابة ↓</a>
     </div>
-    <p style="color:var(--mut);font-size:13px;margin-top:14px">Free to use · try Pro free for a full day, no card</p>
+    <p class="small" data-en="No ads · no account · works on your home Wi‑Fi">من غير إعلانات · من غير حساب · بيشتغل على الـ Wi‑Fi بتاع البيت</p>
   </div>
-  <div class="phone"><div class="bar"></div><div class="dpad"><b class="u"></b><b class="l"></b><b class="o"></b><b class="r"></b><b class="d"></b></div><div class="bar" style="width:90%"></div><div class="bar" style="width:75%"></div></div>
-</section>
+  <div class="phones">
+    <div class="phone p2"><img data-shot="06_keyboard" alt=""></div>
+    <div class="phone p1"><img data-shot="04_remote" alt="TVHand remote"></div>
+  </div>
+</div></div>
 
-<h2 id="features">Why TVHand</h2>
-<div class="grid">
-  <div class="card"><h3>📺 Another way when others fail</h3><p>If a remote app shows “no TV found”, TVHand has another way: a small free helper on the TV, installed once.</p></div>
-  <div class="card"><h3>⌨️ Type &amp; search in any language</h3><p>Search YouTube in Arabic, Urdu, Hindi or English — even when the TV keyboard refuses it. Passwords from your phone keyboard.</p></div>
-  <div class="card"><h3>🖱️ Mouse for stubborn apps</h3><p>A pointer on the TV for apps that ignore arrow keys (IPTV players, web apps). Drag to move, tap to click.</p></div>
-  <div class="card"><h3>👨‍👩‍👧 Family controls</h3><p>Kids mode with an allow‑list of apps, daily screen‑time limits, and a PIN so only your phones can control the TV.</p></div>
-</div>
+<section class="typing" id="typing"><div class="wrap">
+  <div class="center reveal">
+    <h2 data-en="Type on your phone. It appears on the TV.">اكتب على موبايلك… يظهر على الشاشة</h2>
+    <p class="sub" data-en="No more hunting letters with arrow keys. Type with your own phone keyboard, in Arabic or any language, and search YouTube in one tap.">خلاص مفيش تدوير على الحروف بالأسهم. اكتب بكيبورد موبايلك، بالعربي أو بأي لغة، وابحث في يوتيوب بضغطة واحدة.</p>
+  </div>
+  <div class="stage reveal">
+    <div class="phone"><img data-shot="06_keyboard" alt="TVHand keyboard"><div class="typebox"><span class="t" id="tp"></span><span class="caret"></span></div></div>
+    <div>
+      <div class="tv"><div class="yt">
+        <div class="ytbar"><span class="ytlogo">▶ YouTube</span><div class="tvsearch"><span class="t" id="tt"></span><span class="caret"></span></div></div>
+        <div class="results" id="res"><div class="res"></div><div class="res"></div><div class="res"></div><div class="res"></div><div class="res"></div><div class="res"></div></div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ticks">
+    <div class="tick reveal"><b data-en="Live as you type">بيتبعت وإنت بتكتب</b><span data-en="Every letter reaches the TV instantly, no Send button needed.">كل حرف بيوصل للشاشة على طول، من غير زرار إرسال.</span></div>
+    <div class="tick reveal"><b data-en="Any language">بأي لغة</b><span data-en="Arabic, English, Urdu, Hindi… even when the TV keyboard refuses it.">عربي، إنجليزي، أردو، هندي… حتى لو كيبورد الشاشة مش بيدعمها.</span></div>
+    <div class="tick reveal"><b data-en="🎤 Or just say it">🎤 أو قولها بصوتك</b><span data-en="Press “Search by voice”, say what you want to watch, and YouTube searches it on the TV.">دوس "ابحث بصوتك"، وقول عايز تتفرج على إيه، ويوتيوب يدوّر عليه على الشاشة.</span></div>
+  </div>
+</div></section>
 
-<h2 id="tvs">Works with</h2>
-<div class="brands"><span>Android TV &amp; Google TV</span><span>Other Android TVs (with the free helper)</span><span>Samsung</span><span>LG</span><span>Roku / TCL Roku</span><span>Fire TV (soon)</span></div>
+<section id="features"><div class="wrap">
+  <div class="center reveal"><h2 data-en="Everything a remote should do, and more">كل اللي الريموت بيعمله… وأكتر</h2>
+  <p class="sub" data-en="Finds your TV on the Wi‑Fi by itself. Samsung, LG, Roku, Google TV and Android TVs.">بيلاقي شاشتك على الـ Wi‑Fi لوحده. Samsung وLG وRoku وGoogle TV وشاشات أندرويد.</p></div>
+  <div class="feat reveal">
+    <div><span class="tag free" data-en="3 DAYS FREE">3 أيام ببلاش</span><h3 data-en="The remote">الريموت</h3>
+      <p data-en="Big, clear buttons that respond instantly.">زراير كبيرة وواضحة وبتستجيب على طول.</p>
+      <ul><li data-en="Power, arrows, OK, back, home">الباور، الأسهم، OK، الرجوع، الرئيسية</li><li data-en="Volume up and down">رفع وخفض الصوت</li><li data-en="Finds the TV automatically">بيلاقي الشاشة لوحده</li></ul></div>
+    <div class="shot"><div class="phone"><img data-shot="04_remote" alt=""></div></div>
+  </div>
+  <div class="feat reveal">
+    <div><span class="tag pro">PRO</span><h3 data-en="A real mouse on the TV">ماوس حقيقي على الشاشة</h3>
+      <p data-en="For apps that ignore arrow keys (IPTV players, web pages): drag to move the pointer, tap to click.">للتطبيقات اللي مش بتستجيب للأسهم (زي IPTV والمواقع): حرّك صباعك والمؤشر يتحرك، ودوس علشان تضغط.</p></div>
+    <div class="shot"><div class="phone"><img data-shot="05_mouse" alt=""></div></div>
+  </div>
+  <div class="feat reveal">
+    <div><span class="tag pro">PRO</span><h3 data-en="Open any app in one tap">افتح أي تطبيق بلمسة</h3>
+      <p data-en="YouTube, Netflix, Shahid, IPTV… all your TV apps on your phone. One tap and it opens on the TV.">يوتيوب، نتفليكس، شاهد، IPTV… كل تطبيقات الشاشة على موبايلك. لمسة واحدة ويفتح على الشاشة.</p></div>
+    <div class="shot"><div class="phone"><img data-shot="07_apps" alt=""></div></div>
+  </div>
+  <div class="feat reveal">
+    <div><span class="tag pro">PRO</span><h3 data-en="Family controls">تحكم الأهل</h3>
+      <p data-en="Kids mode with the apps you allow, daily screen‑time limits and a PIN so only your phones control the TV.">وضع الأطفال بالتطبيقات اللي إنت تسمح بيها، وحد يومي لوقت المشاهدة، وPIN علشان موبايلاتكم بس هي اللي تتحكم.</p></div>
+    <div class="shot"><div class="phone"><img data-shot="13_family" alt=""></div></div>
+  </div>
+</div></section>
 
-<h2 id="helper">TV not found?</h2>
-<div class="card"><p>Most TVs are found automatically. If yours isn't, or the buttons don't respond, try another way: install the free <b>TV Remote Server</b> helper on the TV once:
-open the TV's browser or the <i>Downloader</i> app, go to <b>devahmedfares.github.io/tvhand/tv</b>, install, open it once.
-Step by step: <a href="tv/">TV helper page</a>.</p></div>
+<section style="padding-top:0"><div class="wrap">
+  <div class="center reveal"><h2 data-en="Without even opening the app">من غير ما تفتح التطبيق كمان</h2>
+  <p class="sub" data-en="A widget on your home screen and a remote in the notification shade: volume, OK, power and arrows, one swipe away.">Widget على الشاشة الرئيسية، وريموت في شريط الإشعارات: الصوت وOK والباور والأسهم، على بُعد سحبة واحدة.</p></div>
+  <div class="center reveal"><img src="img/widget.webp" alt="TVHand widget" style="max-width:520px;width:100%;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.5)"></div>
+</div></section>
 
-<h2 id="pricing">Simple pricing</h2>
-<div class="pricing">
-  <div class="card"><div class="tag">Free</div><div class="price">$0</div><ul><li>Find your TV automatically</li><li>Arrows, OK, Back, Home, volume</li><li>Power, and switching between TVs</li><li>No ads</li></ul></div>
-  <div class="card"><div class="tag">Pro · 1‑day free trial</div><div class="price">$1.99<span style="font-size:14px;color:var(--mut)">/month</span></div><div style="color:var(--mut);margin-top:-6px">or $9.99/year</div><ul><li>Mouse, keyboard, app launcher</li><li>Family controls &amp; kids mode</li><li>No ads</li></ul></div>
-</div>
+<section style="background:var(--bg2)"><div class="wrap">
+  <div class="center reveal"><h2 data-en="Ready in a minute">جاهز في دقيقة</h2></div>
+  <div class="steps" style="margin-top:30px">
+    <div class="step reveal"><i>1</i><b data-en="Install TVHand">نزّل TVHand</b><span data-en="From Google Play, on your Android phone.">من Google Play على موبايلك الأندرويد.</span></div>
+    <div class="step reveal"><i>2</i><b data-en="Same Wi‑Fi">نفس الـ Wi‑Fi</b><span data-en="Phone and TV on the same home Wi‑Fi. The app finds the TV.">الموبايل والشاشة على نفس الشبكة، والتطبيق يلاقي الشاشة.</span></div>
+    <div class="step reveal"><i>3</i><b data-en="Control">اتحكّم</b><span data-en="Tap your TV and you're in control. Your 3 free days start now.">دوس على شاشتك وابدأ، والـ 3 أيام المجانية بتبدأ من دلوقتي.</span></div>
+  </div>
+</div></section>
 
-<footer>
-  © TVHand · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms</a> · <a href="mailto:remotysupport@gmail.com">remotysupport@gmail.com</a>
-</footer>
-</div>
+<section id="pricing"><div class="wrap">
+  <div class="center reveal"><h2 data-en="Simple pricing">أسعار بسيطة</h2><p class="sub" data-en="Try every feature free for 3 days, no card. Make sure it works with your TV before you pay.">جرّب كل المميزات 3 أيام ببلاش ومن غير كارت. اتأكد إنها شغّالة مع شاشتك قبل ما تدفع.</p></div>
+  <div class="plans">
+    <div class="plan reveal"><b data-en="Free trial">تجربة مجانية</b><div class="price">$0 <small data-en="/ 3 days">/ 3 أيام</small></div><ul><li data-en="Every feature unlocked">كل المميزات مفتوحة</li><li data-en="Starts when your TV connects">بتبدأ أول ما شاشتك تتوصل</li><li data-en="No card, nothing charged">من غير كارت ومن غير أي خصم</li></ul></div>
+    <div class="plan best reveal"><span class="save" data-en="Save 58%">وفّر 58%</span><b data-en="Pro · yearly">Pro · سنوي</b><div class="price">$9.99 <small data-en="/ year">/ سنة</small></div><ul><li data-en="The full remote">الريموت كامل</li><li data-en="Mouse, keyboard &amp; YouTube search">الماوس والكيبورد والبحث في يوتيوب</li><li data-en="One‑tap app launcher">فتح التطبيقات بلمسة</li><li data-en="Family controls">تحكم الأهل</li></ul></div>
+    <div class="plan reveal"><b data-en="Pro · monthly">Pro · شهري</b><div class="price">$1.99 <small data-en="/ month">/ شهر</small></div><ul><li data-en="Everything in Pro">كل مميزات Pro</li><li data-en="Cancel anytime in Google Play">إلغاء في أي وقت من Google Play</li></ul></div>
+  </div>
+  <div class="trial reveal" data-en="✓ 3 days free · no card · nothing is charged when the trial ends · the Power button always stays free. Local prices are shown in the app.">✓ 3 أيام ببلاش · من غير كارت · مفيش أي خصم لما التجربة تخلص · زرار الباور مجاني دايماً. السعر بعملة بلدك بيظهر في التطبيق.</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="helper reveal">
+    <div><h3 style="margin:0 0 6px;font-size:24px" data-en="TV not found? Try another way">الشاشة مش ظاهرة؟ جرّب طريقة تانية</h3>
+    <p style="margin:0;color:var(--mut)" data-en-html="Install the free &lt;b&gt;TV Remote Server&lt;/b&gt; helper on the TV once: open the TV's browser or the Downloader app and go to &lt;code&gt;devahmedfares.github.io/tvhand/tv&lt;/code&gt;">سطّب تطبيق <b>TV Remote Server</b> المساعد المجاني على الشاشة مرة واحدة: افتح المتصفح أو تطبيق Downloader على الشاشة وادخل على <code>devahmedfares.github.io/tvhand/tv</code></p></div>
+    <a class="btn alt" href="tv/" data-en="Helper page →">صفحة المساعد ←</a>
+  </div>
+</div></section>
+
+<section id="faq" style="padding-top:20px"><div class="wrap" style="max-width:820px">
+  <h2 class="center reveal" data-en="Questions">أسئلة</h2>
+  <details><summary data-en="Which TVs does it work with?">بيشتغل مع أنهي شاشات؟</summary><p data-en="Samsung (2016+), LG webOS, Roku and Google TV / Android TV work directly. If your TV isn't found, the free TV Remote Server helper gets it working.">Samsung (2016 وأحدث)، وLG webOS، وRoku، وGoogle TV / Android TV بيشتغلوا على طول. ولو شاشتك ماظهرتش، تطبيق TV Remote Server المساعد المجاني بيشغّلها.</p></details>
+  <details><summary data-en="Do I need internet?">محتاج إنترنت؟</summary><p data-en="Only home Wi‑Fi: the phone talks to the TV directly on your network.">Wi‑Fi البيت بس: الموبايل بيكلّم الشاشة مباشرة على الشبكة.</p></details>
+  <details><summary data-en="Will I be charged after the 3 free days?">هيتخصم مني فلوس بعد الـ 3 أيام المجانية؟</summary><p data-en="No. The trial needs no card. When it ends, the features lock (Power stays free) until you choose to subscribe.">لأ. التجربة من غير كارت. لما تخلص، المميزات بتتقفل (والباور يفضل شغّال) لحد ما تختار تشترك.</p></details>
+  <details><summary data-en="How do I cancel?">إزاي ألغي الاشتراك؟</summary><p data-en="Any time from Google Play → Payments &amp; subscriptions.">في أي وقت من Google Play ← الدفعات والاشتراكات.</p></details>
+  <details><summary data-en="Does it collect my data?">بيجمع بياناتي؟</summary><p data-en="No. No account, no ads, no analytics. What you type goes only from your phone to your TV.">لأ. من غير حساب ولا إعلانات ولا تتبّع. اللي بتكتبه بيروح من موبايلك لشاشتك بس.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© TVHand</span>
+  <span><a href="privacy.html" data-en="Privacy">الخصوصية</a> · <a href="terms.html" data-en="Terms">الشروط</a> · <a href="tv/" data-en="TV helper">مساعد الشاشة</a> · <a href="mailto:remotysupport@gmail.com">remotysupport@gmail.com</a></span>
+</div></footer>
+
+<script>
+  // language toggle: Arabic is the page text, English lives in data-en / data-en-html
+  const els = [...document.querySelectorAll("[data-en],[data-en-html]")];
+  els.forEach(e => e.dataset.ar = e.innerHTML);
+  let lang = "ar";
+  try {
+    const saved = localStorage.getItem("lang");
+    if (saved) lang = saved; else if (!(navigator.language || "").startsWith("ar")) lang = "en";
+  } catch (e) {}
+  const q = new URLSearchParams(location.search).get("lang"); if (q === "ar" || q === "en") lang = q;
+  function apply() {
+    document.documentElement.lang = lang; document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    els.forEach(e => { e.innerHTML = lang === "ar" ? e.dataset.ar : (e.dataset.enHtml ?? e.dataset.en); });
+    document.getElementById("lang").textContent = lang === "ar" ? "English" : "العربية";
+    document.querySelectorAll("img[data-shot]").forEach(i => i.src = `img/${lang}/${i.dataset.shot}.webp`);
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+  }
+  document.getElementById("lang").onclick = () => { lang = lang === "ar" ? "en" : "ar"; apply(); };
+  apply();
+
+  // reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }), { threshold: .12 });
+  document.querySelectorAll(".reveal").forEach(e => io.observe(e));
+
+  // typing demo: letters typed on the phone appear on the TV, then results show up
+  const words = { ar: ["قرآن كريم", "مسلسلات رمضان", "ماتش الأهلي"], en: ["cooking recipes", "football highlights", "kids songs"] };
+  const tp = document.getElementById("tp"), tt = document.getElementById("tt"), res = [...document.querySelectorAll(".res")];
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  (async function loop() {
+    for (let i = 0; ; i++) {
+      const w = words[lang][i % 3];
+      const dir = lang === "ar" ? "rtl" : "ltr";
+      tp.parentElement.dir = dir; tt.parentElement.dir = dir;
+      res.forEach(r => r.classList.remove("on")); tp.textContent = ""; tt.textContent = "";
+      for (const ch of w) { tp.textContent += ch; await sleep(70); tt.textContent += ch; await sleep(100); }
+      await sleep(500);
+      for (const r of res) { r.classList.add("on"); await sleep(110); }
+      await sleep(2400);
+    }
+  })();
+</script>
 </body>
 </html>
