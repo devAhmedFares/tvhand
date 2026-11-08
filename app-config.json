@@ -1,5 +1,7 @@
 {
   "minVersionCode": 0,
-  "disabledFeatures": [],
+  "disabledFeatures": [
+    "adb_update"
+  ],
   "notice": null
 }
