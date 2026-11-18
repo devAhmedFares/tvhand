@@ -1,6 +1,8 @@
 {
   "minVersionCode": 0,
   "disabledFeatures": [
+    "auto_install",
+    "firetv",
     "adb_update"
   ],
   "notice": null
