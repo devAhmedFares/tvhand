@@ -1,14 +1,9 @@
 {
-  "minVersionCode": 16,
+  "minVersionCode": 0,
   "disabledFeatures": [
     "auto_install",
     "firetv",
     "adb_update"
   ],
-  "notice": {
-    "id": "update-1.0.10",
-    "ar": "يوجد إصدار جديد من TVHand. حدّث التطبيق من Google Play لكي يستمر في العمل.",
-    "en": "A new version of TVHand is out. Update it from Google Play to keep it working.",
-    "untilVersionCode": 15
-  }
+  "notice": null
 }
